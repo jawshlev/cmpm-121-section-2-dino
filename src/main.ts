@@ -14,7 +14,7 @@ SetText("click to start!")
 let isJumping = false
 let gameOver = true
 
-document.addEventListener('click', () => jump())
+document.addEventListener('mousedown', () => jump())
 
 
 setInterval(function () { Main()}, 10)
@@ -127,3 +127,10 @@ function SetText(s: string): void
         scoreText.textContent = s
     }
 }
+
+function tick(): void{
+    Main();
+    requestAnimationFrame(tick);
+}
+
+requestAnimationFrame
